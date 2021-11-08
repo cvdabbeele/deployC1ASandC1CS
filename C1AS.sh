@@ -8,10 +8,10 @@ function create_c1as_group {
 # Creating groups
 # if a group object for this project-app already exists in c1as, then delete it first
 
-
+[ ${VERBOSE} -eq 1 ] &&  echo "Reading existing group objects in C1AS"
 readarray -t C1ASGROUPS <<< `curl --silent --location --request GET "${C1ASAPIURL}/accounts/groups" --header 'Content-Type: application/json' --header "${C1AUTHHEADER}" --header 'api-version: v1' | jq -r ".[].name"`
 readarray -t DUMMYARRAYTOFIXSYNTAXCOLORINGINVSCODE <<< `pwd `
-#echo C1ASGROUPS[@] =  ${C1ASGROUPS[@]}
+[ ${VERBOSE} -eq 1 ] &&  echo C1ASGROUPS[@] =  ${C1ASGROUPS[@]}
 readarray -t C1ASGROUPIDS <<< `curl --silent --location --request GET "${C1ASAPIURL}/accounts/groups" --header 'Content-Type: application/json' --header "${C1AUTHHEADER}" --header 'api-version: v1' | jq -r ".[].group_id"`
 readarray -t DUMMYARRAYTOFIXSYNTAXCOLORINGINVSCODE <<< `pwd `
 
