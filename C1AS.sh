@@ -17,7 +17,7 @@ readarray -t DUMMYARRAYTOFIXSYNTAXCOLORINGINVSCODE <<< `pwd `
 
 for i in "${!C1ASGROUPS[@]}"
 do
-  #printf "%s\n" "C1AS: found group ${C1ASGROUPS[$i]} with ID ${C1ASGROUPIDS[$i]}"
+  [ ${VERBOSE} -eq 1 ] &&  printf "%s\n" "C1AS: found group ${C1ASGROUPS[$i]} with ID ${C1ASGROUPIDS[$i]}"
   if [[ "${C1ASGROUPS[$i]}" == "${C1PROJECT^^}-${1^^}" ]]; 
   then
     printf "%s\n" "Deleting old Group object ${C1PROJECT^^}-${1^^} in C1AS"
