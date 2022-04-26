@@ -45,14 +45,14 @@ fi
 
 #end of function
 
-create_c1as_group $APP1 1
+create_c1as_group $APP1 
 export APP1KEY=${APPSECKEY}
 export APP1SECRET=${APPSECRET}
 
-create_c1as_group $APP2 2
+create_c1as_group $APP2 
 export APP2KEY=${APPSECKEY}
 export APP2SECRET=${APPSECRET}
 
-create_c1as_group $APP3 3
+create_c1as_group $APP3 
 export APP3KEY=${APPSECKEY}
 export APP3SECRET=${APPSECRET}
